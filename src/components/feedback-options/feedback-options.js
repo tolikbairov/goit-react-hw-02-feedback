@@ -1,12 +1,20 @@
 import React from "react";
-const FeedbackOptions = ({ options, btnOnClick }) => {
+import styles from "./feedback-options.module.css";
+const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <>
-      {options.map((option) => (
-        <button key={option} type="button" name={option} onClick={btnOnClick}>
-          {option}
-        </button>
-      ))}
+      <div className={styles.btns__container}>
+        {options.map((option) => (
+          <button
+            key={option}
+            name={option}
+            onClick={onLeaveFeedback}
+            className={styles.feedback__btn}
+          >
+            {option}
+          </button>
+        ))}
+      </div>
     </>
   );
 };
